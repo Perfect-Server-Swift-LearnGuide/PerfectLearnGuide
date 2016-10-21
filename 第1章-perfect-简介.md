@@ -1,0 +1,48 @@
+### Perfect简介
+引自[http://www.infoq.com/cn/news/2015/11/perfect-swift](http://www.infoq.com/cn/news/2015/11/perfect-swift)
+
+Perfect是一个使用Swift编程语言开发Web和其他REST服务的框架，其主要目标是简化需要后端服务器软件的移动应用的开发，使开发人员可以使用同一种语言进行客户端和服务端开发。
+
+Perfect能为开发人员带来如下好处：
+
+- 开发人员只需要学习Swift一种语言，就可以进行iOS移动应用、后端、Web及可穿戴设备开发；
+- 客户端和服务端开发使用了许多相同的类和工具，减少了代码重复；
+- 完全支持Xcode开发和调式，开发人员可以使用相同的工具同时调试客户端和服务端。
+
+### Perfect主要包含以下组件。
+
+#### PerfectLib
+
+PerfectLib是一个Swift模块，提供了一套进行服务端和客户端开发的核心工具。在许多情况下，客户端和服务端使用相同的API。不过，其目标是在客户端使用平台提供的API，降低应用膨胀的可能性，并提供一个可以同时支持Linux和OS X的、完整的服务端解决方案。
+
+PerfectLib客户端模块主要提供以下特性：
+
+- JSON编码/解码
+- 基于JSON的对象封送
+- 原始字节流管理
+- 简化的UTF-8/16编码和解码
+- UUID创建及与String类型之间的转换
+- CURL支持
+- 简化的SQLite访问
+- 用于字符验证的相关Unicode工具
+
+PerfectLib服务器端模块包含除最后两项之外的所有客户端特性，同时还提供了如下特性：
+
+- TCP和UNIX套接字网络
+- 集成LibEvent
+- 集成ICU，完全支持Unicode
+- 文件和目录对象
+- 进程管理
+- 基于FastCGI的应用服务
+- 基于独立HTTP服务器的应用服务
+- 支持FastCGI和独立HTTP服务器的Web请求和响应API
+- 多部分POST/MIME解析和文件上传处理
+- 服务器扩展模块动态加载
+- Mustache模板解析和处理
+- 将Swift类同Mustache模板联系起来的Web请求处理系统
+- 服务端状态/会话管理
+- MySQL、PostgreSQL、SQLite和MongoDB数据库连接器
+
+#### Perfect Server
+
+Perfect Server是一个让Perfect能够运转的服务端组件。它是一个始终处于运行状态的独立进程，接受客户端连接、处理请求并返回响应。它提供了一种插件机制，允许开发人员向系统中添加自己的应用程序逻辑模块，即“请求处理程序（Handler）”。在启动时，Perfect Server会加载这些开发人员自定义的Swift模块，并将它们同定义响应格式的Mustache模板相关联。这种方法遵循经典的MVC架构实现了逻辑与展示的完全分离。
