@@ -1,6 +1,6 @@
 # PerfectLearnGuide
 
-如果您表示喜欢或者支持此项目，请献上您的star
+如果您表示喜欢或者支持此项目，请献上您的Star或者Fork此项目
 
 ---
 
