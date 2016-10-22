@@ -1,30 +1,121 @@
+### Swift 包管理器(Swift Package Manager)
+
+引自外部文章，如需查看更多详情，请转至以下博客
+- [https://github.com/nixzhu/dev-blog/blob/master/2015-12-04-swift-package-manager.md?utm_source=tuicool&utm_medium=referral](https://github.com/nixzhu/dev-blog/blob/master/2015-12-04-swift-package-manager.md?utm_source=tuicool&utm_medium=referral)
+- [https://aotu.io/notes/2016/04/28/SPM/?utm_source=tuicool&utm_medium=referral](https://aotu.io/notes/2016/04/28/SPM/?utm_source=tuicool&utm_medium=referral) 
+
+#### 概念概述
+
+现在我们先来了解一下关于 SPM 功能的一些基本概念。
+
+在 Swift 中我们使用模块来管理代码，每个模块指定一个命名空间并强制指定模块外哪些部分的代码是可以被访问控制的。
+
+一个程序可以将它所有代码聚合在一个模块中，也可以将它作为依赖关系导入到其他模块。除了少量系统提供的模块，像 OS X 中的 Darwin 或者 Linux 中的 Glibc 等的大多数依赖需要代码被下载或者内置才能被使用。
+
+当你将编写的解决特定问题的代码独立成一个模块时，这段代码可以在其他情况下被重新利用。例如，一个模块提供了发起网络请求的功能，在一个照片分享的 app 或者 一个天气的 app 里它都是可以使用的。使用模块可以让你的代码建立在其他开发者的代码之上，而不是你自己去重复实现相同的功能。
+
+一个包由 Swift 源文件和一个清单文件组成。这个清单文件称为 Package.swift，定义包名或者它的内容使用 PackageDescription 模块。
+
+一个包有一个或者多个目标，每个目标指定一个产品并且可能声明一个或者多个依赖。
+
+一个目标可能构建一个库或者一个可执行文件作为其产品。库是包含可以被其他 Swift 代码导入的模块。可执行文件是一段可以被操作系统运行的程序。
+
+目标依赖是指包中代码必须添加的模块。依赖由包资源的绝对或者相对 URL 和一些可以被使用的包的版本要求所组成。包管理器的作用是通过自动为工程下载和编译所有依赖的过程中，减少协调的成本。这是一个递归的过程：依赖能有自己的依赖，其中每一个也可以具有依赖，形成了一个依赖相关图。包管理器下载和编译所需要满足整个依赖相关图的一切。
+
+####开发包
+简言之：一个包即一个有着语义版本 tag 的 git 仓库，其中包含 Swift 源代码，以及一个放在根目录的 Package.swift 清单文件。
+
+#### Package.swift — 清单文件
+指示如何构建一个包的清单文件，被称为 Package.swift。你可以定制此文件以声明构建 target 或依赖，引用或排除源文件，以及为模块或单个文件指定构建配置。
+
+如下是一个 Package.swift 文件的例子：
+```ruby
+import PackageDescription
+
+let package = Package(
+    name: "Hello",
+    dependencies: [
+        .Package(url: "ssh://git@example.com/Greeter.git", versions: "1.0.0"),
+    ]
+)
+```
+明显，Package.swift文件是一个Swift文件，它用定义在PackageDescription 模块的类型来声明一个包的配置。这个清单声明了一个对外部包 Greeter 的依赖。
+
+每个依赖都需要制定一个源 URL 和版本号。源 URL 是指允许当前用户解析到对应的 Git 仓库。版本号遵循[ 语义化版本号 2.0.0 ](http://semver.org/lang/zh-CN/)的约定，用来决定检出或者使用哪个 Git 标签版本来建立依赖。对于 FisherYates 和 PlayingCard 这两个依赖来说， 最新的将要被使用的主版本号为 1 （例如： 1.0.0）。
+
+当你运行 swift build 命令时，包管理器将会下载所有的依赖， 并将他们编译成静态库，再把它们链接到包模块中。这样将会使 O2DeckOfPlayingCards 可以访问依赖 import 语句的模块的公共成员。
+
+你可以看到这些资源被下载到你工程根目录的 Packages 目录下，并且会生成编译产品在你工程根目录的 .build 目录下。
+
+Packages 目录包含了被复制的包依赖的所有仓库。这样将使你能修改源代码并直接推送这些修改到他们的源，而不需要再对每个包在单独进行复制。剩下的步骤参考前面内容。
+
+如果你的‘包’包含多个互相依赖的 target，那么你需要指明它们的相互依赖关系。如下例所示：
+```ruby
+import PackageDescription
+
+let package = Package(
+    name: "Example",
+    targets: [
+        Target(
+            name: "top",
+            dependencies: [.Target(name: "bottom")]),
+        Target(
+            name: "bottom")
+```
+target 的名字就是你子目录的名字。
+
+#### 自定义构建
+
+清单文件本质为 Swift 源码，可带来极强的自定义性，例如：
+```ruby
+import PackageDescription
+
+var package = Package()
+
+#if os(Linux)
+let target = Target(name: "LinuxSources/foo")
+package.targets.append(target)
+#endif
+```
+对于这样的特性，标准配置文件格式，如 JSON，将导致字典结构对每一个特性都增加很多复杂性。
+
+### 依赖 Apple 模块（如 Foundation）
+
+当前，还没有明确支持依赖于 Foundation、AppKit 等，尽管这些模块在合适的系统位置时应该正常工作。我们将为系统依赖添加明确的支持。注意，目前包管理器还没有支持 iOS、watchOS 或 tvOS 平台。
+
 ### 了解使用Swift编译系统
 
 Swift 编译系统为编译库、可执行文件和在不同工程之间共享代码提供了基本的约定。
 
 创建一个新的 Swift 包，首先创建并进入到一个新的目录命名为 Hello ：
-
-$ mkdir Hello
-$ cd Hello
+```ruby
+mkdir Hello
+cd Hello
+```
 每个包在其根目录下都必须拥有一个命名为 Package.swift 清单文件。如果清单文件为空，那包管理器将会使用常规默认的方式来编译包。创建一个空的清空文件使用命令：
-
-$ touch Package.swift
+```ruby
+touch Package.swift
+```
 当使用默认方式时，包管理器预计将包含在 Sources/ 子目录下的所有源代码。创建方式：
-
-$ mkdir Sources
-编译可执行文件
+```ruby
+mkdir Sources
+```
+#####编译可执行文件
 
 默认方式下，目录中包含一个文件称为 main.swift 将会将文件编译成与包名称相同的二进制可执行文件。
 
-在这个例子中，包将生成一个可以输出 Hello, world! 的可执行文件命名为 Hello 。
+在这个例子中，包将生成一个可以输出 Hello, world! 的可执行文件命名为 Hello 
 
 在 Sources/ 目录下创建一个命名为 main.swift 的文件，并使用你喜欢的任意一种编辑器输入如下代码：
-
+```ruby
 print("Hello, world!")
+```
 返回到 Hello 目录中，通过运行 swift build 命令来编译包：
-
-$ swift build
+```ruby
+swift build
+```
 当命令完成之后，编译产品将会出现在 .build 目录中。通过如下命令运行 Hello 程序:
-
-$ .build/debug/Hello
+```
+.build/debug/Hello
 Hello, world!
+```

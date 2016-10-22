@@ -7,6 +7,7 @@
     * [本书目的](本书目的.md)
 * [第1章 Perfect 简介](第1章-perfect-简介.md)
 * [第2章 Mac开发环境搭建](第2章-mac开发环境搭建.md)
-    * [了解使用Swift编译系统](xx.md)
+    * [Swift 包管理器](xx.md)
     * [Mac开发环境搭建](dd.md)
+    * [Linux开发环境搭建](linux开发环境搭建.md)
 
