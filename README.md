@@ -1,5 +1,7 @@
 # PerfectLearnGuide
 
+如果您表示喜欢或者支持此项目，请献上您的star
+
 ---
 
 * [Perfect: Server-Side Swift 学习手册](PerfectLearnGuide.md)
