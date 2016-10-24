@@ -16,5 +16,7 @@
     * [3.2 创建Swift项目](第3章 云上的Swift/3.2 创建Swift项目.md)
     * [3.3 部署Swift项目](第3章 云上的Swift/3.3 部署Swift项目.md)
 * [第4章 MongoDB基础](第4章 MongoDB基础.md)
-    * [4.1 MongoDB的安装](第4章 MongoDB基础/4.1 MongoDB的安装.md)
+    * [4.1 MongoDB的基本概念](第4章 MongoDB基础/4.1 MongoDB的基本概念.md)
+    * [4.2 MongoDB的安装](第4章 MongoDB基础/4.2 MongoDB的安装.md)
+
 
