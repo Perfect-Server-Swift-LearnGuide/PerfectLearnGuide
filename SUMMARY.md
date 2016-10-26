@@ -28,7 +28,7 @@
         * [4.5.5 删除文档](第4章 MongoDB基础/4.5 MongoDB的基本操作/4.5.5 删除文档.md)
         * [4.5.6 删除数据库](第4章 MongoDB基础/4.5 MongoDB的基本操作/4.5.6 删除数据库.md)
     * [4.6 MongoDB资料推荐](第4章 MongoDB基础/4.6 MongoDB资料推荐.md)
-
+    * [4.7 MongoDB基础进阶篇](第4章 MongoDB基础/4.7 MongoDB 基础进阶篇.md)
 
 
 
