@@ -38,11 +38,10 @@
 
 ### Tip
 
-所有demo实例代码请修改 Procfile 文件内容 release 为 debug，
-因为默认情况下编译出的是一个用于调试的版本。如果需要编译一个用于发行的版本，请用命令swift build -c release。运行后可发行版本的可执行程序被放在了.build/release/目录下。
-
 所有demo实例代码请修改重命名应用程序的项目文件夹以与自己应用程序的名称相匹配。
 
+所有demo实例代码请修改 Procfile 文件内容 release 为 debug，
+因为默认情况下编译出的是一个用于调试的版本。如果需要编译一个用于发行的版本，请用命令swift build -c release。运行后可发行版本的可执行程序被放在了.build/release/目录下。
 
 ### 持续更新中...
 - 后续会加入MongoDB和实际的项目
