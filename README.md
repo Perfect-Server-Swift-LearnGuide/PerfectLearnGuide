@@ -11,7 +11,6 @@
  * [本书目的](前言/本书目的.md)
  * [资料推荐](前言/资料推荐.md)
 * [第1章 Perfect简介](第1章 Perfect简介.md)
-* [sdd dd](dd d)
  * [1.1 Perfect简介](第1章 Perfect简介/1.1 Perfect简介.md)
 * [第2章 开发环境搭建](第2章 开发环境搭建.md)
  * [2.1 Swift包管理器](第2章 开发环境搭建/2.1 Swift包管理器.md)
