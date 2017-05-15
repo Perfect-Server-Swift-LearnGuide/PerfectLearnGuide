@@ -50,3 +50,11 @@
 - 如有错误，欢迎指正；如有转载，请注明出处
 - 同时欢迎对Swift服务器端有兴趣的朋友一起来维护
 
+---
+
+### Contributing to Perfect-Server-Swift-LearnGuide/PerfectLearnGuide
+Welcome to [report Issues](https://github.com/lovemo/Perfect-Server-Swift-LearnGuide/PerfectLearnGuide/issues) or [pull requests](https://github.com/lovemo/Perfect-Server-Swift-LearnGuide/PerfectLearnGuide/pulls) to Perfect-Server-Swift-LearnGuide/PerfectLearnGuide.
+
+## License
+
+Perfect-Server-Swift-LearnGuide/PerfectLearnGuide is released under the MIT license. See LICENSE for details.
