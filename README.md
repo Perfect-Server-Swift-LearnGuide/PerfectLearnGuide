@@ -53,7 +53,7 @@
 ---
 
 ### Contributing to Perfect-Server-Swift-LearnGuide/PerfectLearnGuide
-Welcome to [report Issues](https://github.com/lovemo/Perfect-Server-Swift-LearnGuide/PerfectLearnGuide/issues) or [pull requests](https://github.com/lovemo/Perfect-Server-Swift-LearnGuide/PerfectLearnGuide/pulls) to Perfect-Server-Swift-LearnGuide/PerfectLearnGuide.
+Welcome to [report Issues](https://github.com/Perfect-Server-Swift-LearnGuide/PerfectLearnGuide/issues) or [pull requests](https://github.com/Perfect-Server-Swift-LearnGuide/PerfectLearnGuide/pulls) to Perfect-Server-Swift-LearnGuide/PerfectLearnGuide.
 
 ## License
 
