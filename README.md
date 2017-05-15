@@ -7,7 +7,7 @@
 ---
 
 * [Perfect: Server-Side Swift 学习手册](PerfectLearnGuide.md)
-* [前言](前言.md)
+* [前言](#)
   * [本书目的](前言/本书目的.md)
   * [资料推荐](前言/资料推荐.md)
 * [第1章-Perfect简介](第1章-Perfect简介.md)
