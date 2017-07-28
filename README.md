@@ -4,6 +4,17 @@
 
 交流群：414303220
 
+### Join US
+
+contact me 'sq_lovemo@foxmail.com'
+
+### Swift Server Projects
+
+- [Today-News-Admin](#https://github.com/Perfect-Server-Swift-LearnGuide/Today-News-Admin)
+- [Today-News-Server](#https://github.com/Perfect-Server-Swift-LearnGuide/Today-News-Server)
+- [Today-News-iOS](#https://github.com/Perfect-Server-Swift-LearnGuide/Today-News-iOS)
+- [Today-News-Android](#https://github.com/Perfect-Server-Swift-LearnGuide/Today-News-Android)
+
 ---
 
 * [Perfect: Server-Side Swift 学习手册](PerfectLearnGuide.md)
