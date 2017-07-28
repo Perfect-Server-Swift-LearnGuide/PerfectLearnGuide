@@ -6,7 +6,7 @@
 
 ### Join US
 
-contact me [sq_lovemo@foxmail.com](#sq_lovemo@foxmail.com)
+<strong>Contact me [sq_lovemo@foxmail.com](#sq_lovemo@foxmail.com)</strong>
 
 ### Swift Server Projects
 
