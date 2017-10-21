@@ -68,4 +68,4 @@ Welcome to [report Issues](https://github.com/Perfect-Server-Swift-LearnGuide/Pe
 
 ## License
 
-Perfect-Server-Swift-LearnGuide/PerfectLearnGuide is released under the MIT license. See LICENSE for details.
+Perfect-Server-Swift-LearnGuide/PerfectLearnGuide is released under the Apache License 2.0 license. See LICENSE for details.
