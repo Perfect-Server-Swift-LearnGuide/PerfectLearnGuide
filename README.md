@@ -46,7 +46,8 @@
   * [4.6-MongoDB资料推荐](第4章-MongoDB基础/4.6-MongoDB资料推荐.md)
 * [第5章-Swfit网站](#)
   * [5.1-第一个Swift网站](第5章-Swift网站/5.1-第一个Swift网站.md)
-
+  * [5.2-SwiftPerfect服务器端的自动化部署](第5章-Swift网站/5.2-SwiftPerfect服务器端的自动化部署.md)
+    
 ---
 
 ### Tip
